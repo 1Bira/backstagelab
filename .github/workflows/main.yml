@@ -26,4 +26,16 @@ jobs:
       run: |
         cd src
         docker image build . -f packages/backend/Dockerfile --tag backstage
-  
+
+
+    - name: Build and push Docker images
+      working-directory: src/
+      run: |
+        docker buildx create --use
+        docker buildx build \
+          --file packages/backend/Dockerfile \
+          --tag 1bira/backstagelab:latest \
+          --push .
+
+    - name: Login to Docker Hub
+      run: echo ${{ secrets.DOCKERHUB_ACCESS_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
