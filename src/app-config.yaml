@@ -12,7 +12,7 @@ backend:
   # auth:
   #   keys:
   #     - secret: ${BACKEND_SECRET}
-  baseUrl: https://cappbackstage--9z37b12.gentlesea-447fd72e.westeurope.azurecontainerapps.io
+  baseUrl: https://cappbackstage--02.gentlesea-447fd72e.westeurope.azurecontainerapps.io
   listen:
     port: 7007
     # Uncomment the following host directive to bind to specific interfaces
