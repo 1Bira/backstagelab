@@ -30,6 +30,7 @@ jobs:
         echo ${{ secrets.AZURE_ACR_PASSWORD }} | docker login ${{ secrets.AZURE_ACR_REGISTRY }} -u ${{ secrets.AZURE_ACR_USERNAME }} --password-stdin
 
     - name: Build and push Docker image
+      working-directory: src/
       env:
         IMAGE_NAME: ${{ secrets.AZURE_ACR_REGISTRY }}/backstage:latest
       run: |
