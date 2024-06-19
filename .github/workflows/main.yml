@@ -23,7 +23,7 @@ jobs:
         sed -i 's/POSTGRES_PORT/'"$POSTGRES_PORT"'/' app-config.production.yaml
         sed -i 's/POSTGRES_USER/'"$POSTGRES_USER"'/' app-config.production.yaml
         sed -i 's/POSTGRES_PASSWORD/'"$POSTGRES_PASSWORD"'/' app-config.production.yaml
-        # Outras alterações no arquivo app-config.production.yaml, se necessário
+        # Outras alterações no arquivo app-config.production.yaml, se necessário    
 
     - name: Save artifact
       uses: actions/upload-artifact@v2
@@ -31,6 +31,10 @@ jobs:
         name: app-config.production
         path: app-config.production.yaml
 
+    - name: Verify app
+      run: |
+        cd src
+        cat app-config.production.yaml
     
     - name: Use Node.js 20
       uses: actions/setup-node@v3
