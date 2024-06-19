@@ -17,6 +17,7 @@ jobs:
         POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
         POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
       run: |
+        cd src
         echo "Modifying app-config.production.yaml"
         sed -i 's/POSTGRES_HOST/'"$POSTGRES_HOST"'/' app-config.production.yaml
         sed -i 's/POSTGRES_PORT/'"$POSTGRES_PORT"'/' app-config.production.yaml
