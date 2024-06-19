@@ -12,7 +12,7 @@ backend:
   # auth:
   #   keys:
   #     - secret: ${BACKEND_SECRET}
-  baseUrl: https://cappbackstagenortheurope--02.icybush-96f6cb3d.northeurope.azurecontainerapps.io
+  baseUrl: https://cappbackstagenortheurope--03.icybush-96f6cb3d.northeurope.azurecontainerapps.io
   listen:
     port: 7007
     # Uncomment the following host directive to bind to specific interfaces
