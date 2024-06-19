@@ -18,10 +18,10 @@ jobs:
           POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
         run: |
           echo "Modifying app-config.production.yaml"
-          sed -i 's/POSTGRES_HOST/'"$POSTGRES_HOST"'/' app-config.production.yaml
-          sed -i 's/POSTGRES_PORT/'"$POSTGRES_PORT"'/' app-config.production.yaml
-          sed -i 's/POSTGRES_USER/'"$POSTGRES_USER"'/' app-config.production.yaml
-          sed -i 's/POSTGRES_PASSWORD/'"$POSTGRES_PASSWORD"'/' app-config.production.yaml
+          sed -i 's/POSTGRES_HOST/'"$POSTGRES_HOST"'/' app-config.yaml
+          sed -i 's/POSTGRES_PORT/'"$POSTGRES_PORT"'/' app-config.yaml
+          sed -i 's/POSTGRES_USER/'"$POSTGRES_USER"'/' app-config.yaml
+          sed -i 's/POSTGRES_PASSWORD/'"$POSTGRES_PASSWORD"'/' app-config.yaml
           # Outras alterações no arquivo app-config.production.yaml, se necessário
 
     - name: Save artifact
